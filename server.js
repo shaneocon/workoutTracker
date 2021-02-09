@@ -1,7 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-// const seed = require("./seeders/seed");
+
 
 const PORT = process.envPORT || 8080;
 
