@@ -8,8 +8,16 @@ const PORT = process.envPORT || 8080;
 const app = express();
 app.use(logger("dev"));
 
-mongoose.connect(process.env.MONGODB_URI ||
-  "mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 
 mongoose.connection.on("connected", () => {
   console.log("Mongoose is connected");
